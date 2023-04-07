@@ -14,9 +14,9 @@ import Pie from "./scenes/pie";
 import FAQ from "./scenes/faq";
 import Geography from "./scenes/geography";
 import Calendar from "./scenes/calendar";
+import Developer from "./scenes/developers";
 function App() {
   const [theme,colorMode] = useMode();
-
   return (
     <ColorModeContext.Provider value= {colorMode}>
      <ThemeProvider theme= {theme}>
@@ -37,6 +37,7 @@ function App() {
             {<Route path="/faq" element ={<FAQ/>}/>}
             {<Route path="/geography" element ={<Geography/>}/>}
             {<Route path="/calendar" element ={<Calendar/>}/>}
+            {<Route path="/developers" element= {<Developer/>}/>}
            </Routes>
         </main>
       </div>
@@ -47,5 +48,6 @@ function App() {
   
   );
 }
+
 
 export default App;
