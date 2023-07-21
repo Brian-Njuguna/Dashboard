@@ -17,7 +17,9 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import Diversity2Icon from "@mui/icons-material/Diversity2";
-
+import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
+import AccountTreeRoundedIcon from '@mui/icons-material/AccountTreeRounded';
+import RecommendRoundedIcon from '@mui/icons-material/RecommendRounded';
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -111,7 +113,7 @@ const Sidebar = () => {
                   BRIAN NJUGUNA
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  OFFENSIVE LIMITED
+                  Personal Portfolio
                 </Typography>
               </Box>
             </Box>
@@ -134,9 +136,9 @@ const Sidebar = () => {
               Data
             </Typography>
             <Item
-              title="Manage Team"
-              to="/team"
-              icon={<PeopleOutlinedIcon />}
+              title="Resume"
+              to="/resume"
+              icon={<CloudDownloadRoundedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -148,9 +150,9 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Invoices Balances"
-              to="/invoices"
-              icon={<ReceiptOutlinedIcon />}
+              title="Projects"
+              to="/projects"
+              icon={<  AccountTreeRoundedIcon/>}
               selected={selected}
               setSelected={setSelected}
             />
@@ -163,16 +165,9 @@ const Sidebar = () => {
               Pages
             </Typography>
             <Item
-              title="Profile Form"
+              title="Profile"
               to="/form"
               icon={<PersonOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Calendar"
-              to="/calendar"
-              icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -191,13 +186,7 @@ const Sidebar = () => {
             >
               Charts
             </Typography>
-            <Item
-              title="Bar Chart"
-              to="/bar"
-              icon={<BarChartOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+         
             <Item
               title="Pie Chart"
               to="/pie"
@@ -205,34 +194,22 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
-              title="Line Chart"
-              to="/line"
-              icon={<TimelineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Geography Chart"
-              to="/geography"
-              icon={<MapOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Typography
+          
+          <Typography
               variant="h6"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
-            > Developers
+            >
+              References
             </Typography>
-            <Item 
-              title ="Developer Team"
-              to="/developers"
-              icon={<Diversity2Icon/>}
+         
+            <Item
+              title="Testimonials"
+              to="/reference"
+              icon={<RecommendRoundedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-
           </Box>
         </Menu>
       </ProSidebar>

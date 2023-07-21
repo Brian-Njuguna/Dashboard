@@ -20,8 +20,8 @@ export const tokens = (mode) => ({
           100: "#d0d1d5",
           200: "#a1a4ab",
           300: "#727681",
-          400: "#1F2A40",
-          500: "#141b2d",
+          400: "#01091a",
+          500: "#081630",
           600: "#101624",
           700: "#0c101b",
           800: "#080b12",
@@ -171,7 +171,7 @@ export const themeSettings = (mode) => {
       },
       h2: {
         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        fontSize: 32,
+        fontSize: 25,
       },
       h3: {
         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),

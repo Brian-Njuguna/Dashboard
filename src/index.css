@@ -31,5 +31,14 @@ body,
  ::-webkit-scrollbar-track:hover{
     background: #555;
  }
+ .button{
+   cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+ }
  
 
