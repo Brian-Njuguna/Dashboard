@@ -19,6 +19,7 @@ const Dashboard = ({selected,setSelected}) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const navigate = useNavigate();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const navigateToprojects =() =>{
     navigate('/projects')
@@ -27,7 +28,7 @@ const Dashboard = ({selected,setSelected}) => {
   return (
     <Box m="20px">
       {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
+      <Box display="flex" flexDirection= {isMobile ? 'column':'row'} justifyContent='space-between' alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to My Portfolio" />
 
         <Box>
@@ -37,7 +38,8 @@ const Dashboard = ({selected,setSelected}) => {
               color: colors.grey[100],
               fontSize: "14px",
               fontWeight: "bold",
-              padding: "10px 20px",
+              padding: isMobile ? "5px 10px" : "10px 20px",
+              margin:isMobile ? '4px' :'0',
             }}
           >
             <DownloadOutlinedIcon sx={{ mr: "10px" }} />
@@ -48,9 +50,10 @@ const Dashboard = ({selected,setSelected}) => {
 
       {/* GRID & CHARTS */}
       <Box
-        display="grid"
+        display={isMobile ? 'flex' :"grid"}
+        flexDirection={isMobile ? 'column' : 'row'}
         gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="140px"
+        gridAutoRows= {isMobile ? '90px': "120px"}
         gap="20px"
       >
         {/* ROW 1 */}
@@ -60,15 +63,17 @@ const Dashboard = ({selected,setSelected}) => {
           display="flex"
           alignItems="center"
           justifyContent="center"
+          flexDirection={isMobile ? 'column' : 'row'}
         >
           <StatBox
-            title="12,361"
+            title ="12,361"
             subtitle="Email"
             progress="0.75"
             increase="+14%"
             icon={
               <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.greenAccent[600],
+                  fontSize: isMobile? "20px" : "26px" }}
               />
             }
           />
@@ -79,6 +84,7 @@ const Dashboard = ({selected,setSelected}) => {
           display="flex"
           alignItems="center"
           justifyContent="center"
+          flexDirection={isMobile ? 'column' : 'row'}
         >
           <StatBox
             title="431,225"
@@ -87,7 +93,8 @@ const Dashboard = ({selected,setSelected}) => {
             increase="+21%"
             icon={
               <PointOfSaleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.greenAccent[600],
+                  fontSize: isMobile? "20px" : "26px" }}
               />
             }
           />
@@ -96,8 +103,9 @@ const Dashboard = ({selected,setSelected}) => {
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
-          alignItems="center"
+          alignItems="center" 
           justifyContent="center"
+          flexDirection={isMobile ? 'column' : 'row'}
         >
           <StatBox
             title="32,441"
@@ -106,7 +114,8 @@ const Dashboard = ({selected,setSelected}) => {
             increase="+5%"
             icon={
               <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.greenAccent[600],
+                  fontSize: isMobile? "20px" : "26px"}}
               />
             }
           />
@@ -118,7 +127,6 @@ const Dashboard = ({selected,setSelected}) => {
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
-          
           <Box
             mt="25px"
             p="0 30px"
@@ -143,16 +151,14 @@ const Dashboard = ({selected,setSelected}) => {
   inset -5px -5px 10px blue;">
                 <img
                   alt="profile-user"
-                  width="100px"
-                  height="100px"
+                  width={isMobile ? '30px' :"100px"}
+                  height={isMobile ? '30px' : "100px"}
                   src={`../../assets/youtube.png`}
                   style={{ cursor: "pointer", borderRadius: "20%" }}
                 />
                 <Box>
-                <button 
-              backgroundColor="colors.bl"
-              style={{cursor:"pointer",backgroundColor:" #525a69, #525a69",color:"#e2726"}}
-                 >Youtube Clone
+                <button variant="outlined"fontSize="10px" fontWeight="bold" padding="10px 20px"
+                >Youtube Clone
                 </button>
                 </Box>
               </Box>
@@ -161,13 +167,13 @@ const Dashboard = ({selected,setSelected}) => {
               <Box display="flex" justifyContent="center" alignItems="center" backgroundColor="#030b1c" boxShadow=" 120px 80px 40px 20px #0ff,inset -5px -5px 10px blue ">
                 <img
                   alt="profile-user"
-                  width="100px"
-                  height="100px"
+                  width={isMobile ? '30px' :"100px"}
+                  height={isMobile ? '40px' : "100px"}
                   src={`../../assets/twitter.jpg`}
                   style={{ cursor: "pointer", borderRadius: "20%" }}
                 />
                 <Box>
-                <button variant="outlined"fontSize="14px" fontWeight="bold" padding="10px 20px"
+                <button variant="outlined"fontSize="10px" fontWeight="bold" padding="10px 20px"
                 >Tweepy Bot
                 </button>
                 </Box>
@@ -180,14 +186,14 @@ const Dashboard = ({selected,setSelected}) => {
   inset -5px -5px 10px blue;">
                 <img
                   alt="profile-user"
-                  width="100px"
-                  height="100px"
+                  width={isMobile ? '30px' :"100px"}
+                  height={isMobile ? '30px' : "100px"}
                   src={`../../assets/gym.jpg`}
                   style={{ cursor: "pointer", borderRadius: "20%" }}
                 />
                 <Box>
                 <button variant="outlined"
-                fontSize="14px" fontWeight="bold" padding="10px 20px"
+                fontSize="10px" fontWeight="bold" padding="10px 20px"
                   >Quest GYM
                 </button>
                 </Box>
@@ -196,14 +202,14 @@ const Dashboard = ({selected,setSelected}) => {
   inset -5px -5px 10px blue;">
                 <img
                   alt="profile-user"
-                  width="100px"
-                  height="100px"
+                  width={isMobile ? '30px' :"100px"}
+                  height={isMobile ? '30px' : "100px"}
                   src={`../../assets/netflix.png`}
                   style={{ cursor: "pointer", borderRadius: "20%" }}
                 />
                 <Box color={colors.grey[500]}>
                 <button
-                variant="outlined"fontSize="14px" fontWeight="bold" padding="10px 20px"boxShadow="inset 5px 5px 10px #000000, 
+                variant="outlined"fontSize="10px" fontWeight="bold" padding="10px 20px"boxShadow="inset 5px 5px 10px #000000, 
   inset -5px -5px 10px blue;"
                   >Netflix Clone
                 </button>
